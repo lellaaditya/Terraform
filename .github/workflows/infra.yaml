@@ -1,1 +1,47 @@
+name: 'Terraform'
+on: [workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+     run:
+      # We keep Terraform files in the terraform directory.
+        working-directory: ./Terraform
+  
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    
+    # Login to Azure
+    - uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}  
+        
+    # Setups the Terraform with required Version        
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v2
+      with:
+        terraform_version: 1.4.2
+        
+    # initializes a working directory  
+    - name: Terraform Init
+      run: terraform init  
+      working-directory: ./Terraform
+      
+    # validate the syntax  
+    - name: Terraform Validate
+      run: terraform validate 
+      working-directory: ./Terraform
+      
+    # preview the changes in Configuration files   
+    - name: Terraform Plan
+      run: terraform plan 
+      working-directory: ./Terraform
+      
+      
+    
+    #- run: terraform apply -auto-approve 
+    #  working-directory: ./Terraform
 
