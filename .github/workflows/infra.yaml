@@ -7,7 +7,7 @@ jobs:
     defaults:
      run:
       # We keep Terraform files in the terraform directory.
-        working-directory: ./Terraform
+        working-directory: ./Terraform/VM
   
     
     steps:
@@ -28,20 +28,20 @@ jobs:
     # initializes a working directory  
     - name: Terraform Init
       run: terraform init  
-      working-directory: ./Terraform
+      working-directory: ./Terraform/VM
       
     # validate the syntax  
     - name: Terraform Validate
       run: terraform validate 
-      working-directory: ./Terraform
+      working-directory: ./Terraform/VM
       
     # preview the changes in Configuration files   
     - name: Terraform Plan
       run: terraform plan 
-      working-directory: ./Terraform
+      working-directory: ./Terraform/VM
       
       
     
-    #- run: terraform apply -auto-approve 
-    #  working-directory: ./Terraform
+    - run: terraform apply -auto-approve 
+      working-directory: ./Terraform/VM
 
