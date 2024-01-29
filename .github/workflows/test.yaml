@@ -4,6 +4,9 @@ on: [push]
 
 name: Run Azure Login without subscription
 
+permissions:
+  id-token: write
+
 jobs:
 
   build-and-deploy:
