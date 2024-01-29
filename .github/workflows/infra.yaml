@@ -1,10 +1,9 @@
-name: 'Terraform'
+# File: .github/workflows/workflow.yml
+
 on: [workflow_dispatch]
 
-permissions:
-      id-token: write
-      contents: read
-      
+name: Run Azure Login With a Service Principal Secret
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -12,26 +11,22 @@ jobs:
      run:
       # We keep Terraform files in the terraform directory.
         working-directory: ./Terraform/VM
-  
-    
+
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v3    
     
-    # Login to Azure
-    - name: Azure login
-      uses: azure/login@v1
+    - uses: azure/login@v1
       with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-  
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+    
     - name: Azure CLI script
       uses: azure/CLI@v1
       with:
-          azcliversion: latest
-          inlineScript: |
-            az account show
+        azcliversion: latest
+        inlineScript: |
+          az account show
+
         
     # Setups the Terraform with required Version        
     - name: Setup Terraform
