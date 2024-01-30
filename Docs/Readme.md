@@ -20,3 +20,12 @@ files
 
 The terraform init command initializes a working directory containing configuration files and installs plugins for required providers
 
+Note: Terraform also has the concept of planning out changes to a file. This is useful to ensure
+you only apply what has been planned previously. Try running a plan again but this time passing
+an -out flag as shown below.
+
+terraform plan -out myplan
+
+Run the command as shown below to run a planned destroy:
+
+terraform plan -destroy
