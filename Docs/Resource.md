@@ -17,3 +17,5 @@ https://github.com/btkrausen/hashicorp/blob/master/terraform/Hands-On%20Labs/Sec
 https://developer.hashicorp.com/terraform/language/state
 
 https://developer.hashicorp.com/terraform/language/state/remote
+
+https://github.com/btkrausen/hashicorp/blob/master/terraform/Hands-On%20Labs/Section%2003%20-%20Understand%20The%20Purpose%20of%20Terraform/02%20-%20Benefits_of_State.md
