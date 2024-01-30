@@ -15,3 +15,5 @@ https://github.com/btkrausen/hashicorp/blob/master/terraform/Hands-On%20Labs/Sec
 https://github.com/btkrausen/hashicorp/blob/master/terraform/Hands-On%20Labs/Section%2003%20-%20Understand%20The%20Purpose%20of%20Terraform/01%20-%20Terraform_Purpose.md
 
 https://developer.hashicorp.com/terraform/language/state
+
+https://developer.hashicorp.com/terraform/language/state/remote
