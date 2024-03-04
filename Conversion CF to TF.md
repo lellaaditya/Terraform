@@ -20,3 +20,6 @@ Region ?
 
 Depended resources ?
 
+https://medium.com/@DiggerHQ/points-to-remember-while-migrating-from-cloud-formation-to-terraform-4f896b94a4e3
+
+https://github.com/DontShaveTheYak/cf2tf/tree/master
