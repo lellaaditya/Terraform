@@ -11,3 +11,4 @@ Create a new branch
 Integrate Azure Pipelines with AWS Cloud Using Service Principal
 
 
+Storage -- versioning,Store,lock
