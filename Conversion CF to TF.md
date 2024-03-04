@@ -10,6 +10,9 @@ Create a new branch
 
 Integrate Azure Pipelines with AWS Cloud Using Service Principal
 
+AWS Access key and secret key, region
+ 
+
 
 Storage -- versioning,Store,lock ?
 
