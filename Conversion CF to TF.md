@@ -8,7 +8,7 @@ Know the Repo
 
 Create a new branch
 
-Integrate Azure Pipelines with AWS Cloud Using Service Principal
+Integrate Azure Pipelines with AWS Cloud Using Service Connection
 
 AWS Access key and secret key, region
  
