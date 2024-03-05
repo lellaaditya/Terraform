@@ -12,7 +12,7 @@ Integrate Azure Pipelines with AWS Cloud Using Service Connection
 
 AWS Access key and secret key, region
  
-
+IAM
 
 Storage -- versioning,Store,lock ?
 
