@@ -44,8 +44,7 @@ Multi-Cloud Support: AWS, Azure, Google Cloud, etc
 # terminology and concepts
 
 1. **Provider**: A provider is a plugin for Terraform that defines and manages resources for a specific cloud or infrastructure platform. 
-Examples of providers include AWS, Azure, Google Cloud, and many others. 
-You configure providers in your Terraform code to interact with the desired infrastructure platform.
+Examples of providers include AWS, Azure(azurerm), Google Cloud,kubernetes and many others. Interacts with cloud 
 
 2. **Resource**: A resource is a specific infrastructure component that you want to create and manage using Terraform. Resources can include virtual machines, databases, storage buckets, network components, and more. Each resource has a type and configuration parameters that you define in your Terraform code.
 
@@ -78,3 +77,32 @@ You configure providers in your Terraform code to interact with the desired infr
 ## macOS
 
 - Follow the steps provided in the Downloads [Page](https://developer.hashicorp.com/terraform/downloads) for macOS.
+
+# Setup Terraform for Azure
+
+Install az cli
+
+az login
+
+az account list
+
+az account set --subscription="SUBSCRIPTION_ID"
+
+# We strongly recommend using the required_providers block to set the
+# Azure Provider source and version being used
+terraform {
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "=4.1.0"
+    }
+  }
+}
+
+# Configure the Microsoft Azure Provider
+provider "azurerm" {
+  features {}
+
+  subscription_id = "00000000-0000-0000-0000-000000000000"
+}
+
