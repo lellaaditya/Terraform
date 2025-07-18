@@ -172,3 +172,7 @@ A remote backend stores the Terraform state file outside of your local file syst
    The `local-exec` provisioner is used to run scripts or commands locally on the machine where Terraform is executed. It is useful for tasks that don't require remote execution, such as initializing a local database or configuring local resources
    
 
+# secure Terraform
+
+to manage sensitive information
+- Azure Key Vault
