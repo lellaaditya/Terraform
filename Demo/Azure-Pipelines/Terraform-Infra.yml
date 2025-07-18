@@ -1,0 +1,41 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: TerraformInstaller@1
+  displayName: Terraform install
+  inputs:
+    terraformVersion: 'latest'
+- task: TerraformTask@5
+  displayName: Terraform init
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
+    backendServiceArm: 'Azure subscription 1(c71abebe-2a66-48cd-bdd8-bacd5cec1636)'
+    backendAzureRmStorageAccountName: 'adityastr'
+    backendAzureRmContainerName: 'terraformcont'
+    backendAzureRmKey: 'tf/tfdata'
+
+- task: TerraformTask@5
+  displayName: Terraform validate
+  inputs:
+    provider: 'azurerm'
+    command: 'validate'
+
+- task: TerraformTask@5
+  displayName: Terraform Plan
+  inputs:
+    provider: 'azurerm'
+    command: 'plan'
+    environmentServiceNameAzureRM: 'Azure subscription 1(c71abebe-2a66-48cd-bdd8-bacd5cec1636)'
+
+- task: TerraformTask@5
+  displayName: Terraform Apply
+  inputs:
+    provider: 'azurerm'
+    command: 'apply'
+    commandOptions: '--auto-approve'
+    environmentServiceNameAzureRM: 'Azure subscription 1(c71abebe-2a66-48cd-bdd8-bacd5cec1636)'
