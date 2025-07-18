@@ -70,3 +70,12 @@ terraform {
   }
 }
 ```
+
+
+# Data sources
+
+``hcl
+data "azurerm_resource_group" "rg" {
+  name = "aditya"
+}
+```
