@@ -74,7 +74,7 @@ terraform {
 
 # Data sources
 
-``hcl
+```hcl
 data "azurerm_resource_group" "rg" {
   name = "aditya"
 }
