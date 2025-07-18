@@ -90,6 +90,7 @@ az account set --subscription="SUBSCRIPTION_ID"
 
 # We strongly recommend using the required_providers block to set the
 # Azure Provider source and version being used
+```hcl
 terraform {
   required_providers {
     azurerm = {
@@ -98,11 +99,13 @@ terraform {
     }
   }
 }
+```
 
 # Configure the Microsoft Azure Provider
+```hcl
 provider "azurerm" {
   features {}
 
   subscription_id = "00000000-0000-0000-0000-000000000000"
 }
-
+```
