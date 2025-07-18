@@ -176,3 +176,51 @@ A remote backend stores the Terraform state file outside of your local file syst
 
 to manage sensitive information
 - Azure Key Vault
+
+# Resource Creation 
+
+**Initialize Terraform**
+
+In your terminal, navigate to the directory containing your Terraform configuration files and run:
+
+```
+terraform init
+```
+
+This command initializes the Terraform working directory, downloading any necessary provider plugins.
+
+**Validation**
+
+```
+terraform validate
+```
+validates the configuration files in a directory.Validate runs checks that verify whether a configuration is syntactically valid and internally consistent, regardless of any provided variables or existing state
+
+**Dry Run** 
+
+```
+terraform plan
+```
+creates an execution plan, which lets you preview the changes that Terraform plans to make to your infrastructure
+
+**Apply the Configuration**
+
+Run the following command to create the Azure resources defined in your Terraform configuration:
+
+```
+terraform apply
+```
+
+Terraform will display a plan of the changes it's going to make. Review the plan and type "yes" when prompted to apply it.
+
+## Verify Resources
+
+After Terraform completes the provisioning process, you can verify the resources created in the Azure Portal.
+
+## Destroy Resources
+
+If you want to remove the resources created by Terraform, you can use the following command:
+
+```
+terraform destroy
+```
