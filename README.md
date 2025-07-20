@@ -29,3 +29,5 @@ for_each -- create multiple instances of a resources based on map or set of valu
 
 
 built in function
+
+https://www.remiceraline.com/blog/azure-devops-pipeline-for-terraform-cleanup
